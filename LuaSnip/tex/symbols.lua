@@ -1,0 +1,104 @@
+local ls = require 'luasnip'
+local s = ls.snippet
+local sn = ls.snippet_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local d = ls.dynamic_node
+local fmt = require('luasnip.extras.fmt').fmt
+local fmta = require('luasnip.extras.fmt').fmta
+local rep = require('luasnip.extras').rep
+local in_mathzone = function()
+  -- requires vimtex
+  return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
+return {
+  -- Greek alphabet
+  -- Miniscule letters
+  s({ trig = ';a', snippetType = 'autosnippet' }, { t '\\alpha' }),
+  s({ trig = ';b', snippetType = 'autosnippet' }, { t '\\beta' }),
+  s({ trig = ';g', snippetType = 'autosnippet' }, { t '\\gamma' }),
+  s({ trig = ';e', snippetType = 'autosnippet' }, { t '\\varepsilon' }),
+  s({ trig = ';z', snippetType = 'autosnippet' }, { t '\\zeta' }),
+  s({ trig = ';h', snippetType = 'autosnippet' }, { t '\\eta' }),
+  s({ trig = ';q', snippetType = 'autosnippet' }, { t '\\theta' }),
+  s({ trig = ';i', snippetType = 'autosnippet' }, { t '\\iota' }),
+  s({ trig = ';k', snippetType = 'autosnippet' }, { t '\\kappa' }),
+  s({ trig = ';l', snippetType = 'autosnippet' }, { t '\\lambda' }),
+  s({ trig = ';m', snippetType = 'autosnippet' }, { t '\\mu' }),
+  s({ trig = ';n', snippetType = 'autosnippet' }, { t '\\nu' }),
+  s({ trig = ';x', snippetType = 'autosnippet' }, { t '\\xi' }),
+  s({ trig = ';o', snippetType = 'autosnippet' }, { t '\\omicron' }),
+  s({ trig = ';p', snippetType = 'autosnippet' }, { t '\\pi' }),
+  s({ trig = ';r', snippetType = 'autosnippet' }, { t '\\rho' }),
+  s({ trig = ';s', snippetType = 'autosnippet' }, { t '\\sigma' }),
+  s({ trig = ';t', snippetType = 'autosnippet' }, { t '\\tau' }),
+  s({ trig = ';u', snippetType = 'autosnippet' }, { t '\\upsilon' }),
+  s({ trig = ';f', snippetType = 'autosnippet' }, { t '\\phi' }),
+  s({ trig = ';c', snippetType = 'autosnippet' }, { t '\\chi' }),
+  s({ trig = ';y', snippetType = 'autosnippet' }, { t '\\psi' }),
+  s({ trig = ';w', snippetType = 'autosnippet' }, { t '\\omega' }),
+  -- Majuscule greek letters
+  s({ trig = ';A', snippetType = 'autosnippet' }, { t '\\Alpha' }),
+  s({ trig = ';B', snippetType = 'autosnippet' }, { t '\\Beta' }),
+  s({ trig = ';G', snippetType = 'autosnippet' }, { t '\\Gamma' }),
+  s({ trig = ';E', snippetType = 'autosnippet' }, { t '\\Epsilon' }),
+  s({ trig = ';Z', snippetType = 'autosnippet' }, { t '\\Zeta' }),
+  s({ trig = ';H', snippetType = 'autosnippet' }, { t '\\Eta' }),
+  s({ trig = ';Q', snippetType = 'autosnippet' }, { t '\\Theta' }),
+  s({ trig = ';I', snippetType = 'autosnippet' }, { t '\\Iota' }),
+  s({ trig = ';K', snippetType = 'autosnippet' }, { t '\\Kappa' }),
+  s({ trig = ';L', snippetType = 'autosnippet' }, { t '\\Lambda' }),
+  s({ trig = ';M', snippetType = 'autosnippet' }, { t '\\Mu' }),
+  s({ trig = ';N', snippetType = 'autosnippet' }, { t '\\Nu' }),
+  s({ trig = ';X', snippetType = 'autosnippet' }, { t '\\Xi' }),
+  s({ trig = ';O', snippetType = 'autosnippet' }, { t '\\Omicron' }),
+  s({ trig = ';P', snippetType = 'autosnippet' }, { t '\\Pi' }),
+  s({ trig = ';R', snippetType = 'autosnippet' }, { t '\\Rho' }),
+  s({ trig = ';S', snippetType = 'autosnippet' }, { t '\\Sigma' }),
+  s({ trig = ';T', snippetType = 'autosnippet' }, { t '\\Tau' }),
+  s({ trig = ';U', snippetType = 'autosnippet' }, { t '\\Upsilon' }),
+  s({ trig = ';F', snippetType = 'autosnippet' }, { t '\\Phi' }),
+  s({ trig = ';C', snippetType = 'autosnippet' }, { t '\\Chi' }),
+  s({ trig = ';Y', snippetType = 'autosnippet' }, { t '\\Psi' }),
+  s({ trig = ';W', snippetType = 'autosnippet' }, { t '\\Omega' }),
+
+  --Special characters
+
+  --Bold letters
+  s({ trig = 'bR', snippetType = 'autosnippet' }, { t '\\mathbb{R}' }, { condition = in_mathzone }),
+  s({ trig = 'bN', snippetType = 'autosnippet' }, { t '\\mathbb{N}' }, { condition = in_mathzone }),
+  s({ trig = 'bC', snippetType = 'autosnippet' }, { t '\\mathbb{C}' }, { condition = in_mathzone }),
+  s({ trig = 'bQ', snippetType = 'autosnippet' }, { t '\\mathbb{Q}' }, { condition = in_mathzone }),
+  s({ trig = 'bZ', snippetType = 'autosnippet' }, { t '\\mathbb{Z}' }, { condition = in_mathzone }),
+  s({ trig = 'bK', snippetType = 'autosnippet' }, { t '\\mathbb{K}' }, { condition = in_mathzone }),
+
+  -- Calligraphied letters
+  s({ trig = 'cA', snippetType = 'autosnippet' }, { t '\\mathcal{A}' }, { condition = in_mathzone }),
+  s({ trig = 'cB', snippetType = 'autosnippet' }, { t '\\mathcal{B}' }, { condition = in_mathzone }),
+  s({ trig = 'cC', snippetType = 'autosnippet' }, { t '\\mathcal{C}' }, { condition = in_mathzone }),
+  s({ trig = 'cD', snippetType = 'autosnippet' }, { t '\\mathcal{D}' }, { condition = in_mathzone }),
+  s({ trig = 'cE', snippetType = 'autosnippet' }, { t '\\mathcal{E}' }, { condition = in_mathzone }),
+  s({ trig = 'cF', snippetType = 'autosnippet' }, { t '\\mathcal{F}' }, { condition = in_mathzone }),
+  s({ trig = 'cG', snippetType = 'autosnippet' }, { t '\\mathcal{G}' }, { condition = in_mathzone }),
+  s({ trig = 'cH', snippetType = 'autosnippet' }, { t '\\mathcal{H}' }, { condition = in_mathzone }),
+  s({ trig = 'cI', snippetType = 'autosnippet' }, { t '\\mathcal{I}' }, { condition = in_mathzone }),
+  s({ trig = 'cJ', snippetType = 'autosnippet' }, { t '\\mathcal{J}' }, { condition = in_mathzone }),
+  s({ trig = 'cK', snippetType = 'autosnippet' }, { t '\\mathcal{K}' }, { condition = in_mathzone }),
+  s({ trig = 'cL', snippetType = 'autosnippet' }, { t '\\mathcal{L}' }, { condition = in_mathzone }),
+  s({ trig = 'cM', snippetType = 'autosnippet' }, { t '\\mathcal{M}' }, { condition = in_mathzone }),
+  s({ trig = 'cN', snippetType = 'autosnippet' }, { t '\\mathcal{N}' }, { condition = in_mathzone }),
+  s({ trig = 'cO', snippetType = 'autosnippet' }, { t '\\mathcal{O}' }, { condition = in_mathzone }),
+  s({ trig = 'cP', snippetType = 'autosnippet' }, { t '\\mathcal{P}' }, { condition = in_mathzone }),
+  s({ trig = 'cQ', snippetType = 'autosnippet' }, { t '\\mathcal{Q}' }, { condition = in_mathzone }),
+  s({ trig = 'cR', snippetType = 'autosnippet' }, { t '\\mathcal{R}' }, { condition = in_mathzone }),
+  s({ trig = 'cS', snippetType = 'autosnippet' }, { t '\\mathcal{S}' }, { condition = in_mathzone }),
+  s({ trig = 'cT', snippetType = 'autosnippet' }, { t '\\mathcal{T}' }, { condition = in_mathzone }),
+  s({ trig = 'cU', snippetType = 'autosnippet' }, { t '\\mathcal{U}' }, { condition = in_mathzone }),
+  s({ trig = 'cV', snippetType = 'autosnippet' }, { t '\\mathcal{V}' }, { condition = in_mathzone }),
+  s({ trig = 'cW', snippetType = 'autosnippet' }, { t '\\mathcal{W}' }, { condition = in_mathzone }),
+  s({ trig = 'cX', snippetType = 'autosnippet' }, { t '\\mathcal{X}' }, { condition = in_mathzone }),
+  s({ trig = 'cY', snippetType = 'autosnippet' }, { t '\\mathcal{Y}' }, { condition = in_mathzone }),
+  s({ trig = 'cZ', snippetType = 'autosnippet' }, { t '\\mathcal{Z}' }, { condition = in_mathzone }),
+}
