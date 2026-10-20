@@ -1,13 +1,7 @@
+-- Snippets pour les symboles seulement
 local ls = require 'luasnip'
 local s = ls.snippet
-local sn = ls.snippet_node
 local t = ls.text_node
-local i = ls.insert_node
-local f = ls.function_node
-local d = ls.dynamic_node
-local fmt = require('luasnip.extras.fmt').fmt
-local fmta = require('luasnip.extras.fmt').fmta
-local rep = require('luasnip.extras').rep
 local in_mathzone = function()
   -- requires vimtex
   return vim.fn['vimtex#syntax#in_mathzone']() == 1
@@ -73,6 +67,7 @@ return {
   s({ trig = 'bQ', snippetType = 'autosnippet' }, { t '\\mathbb{Q}' }, { condition = in_mathzone }),
   s({ trig = 'bZ', snippetType = 'autosnippet' }, { t '\\mathbb{Z}' }, { condition = in_mathzone }),
   s({ trig = 'bK', snippetType = 'autosnippet' }, { t '\\mathbb{K}' }, { condition = in_mathzone }),
+  s({ trig = 'bU', snippetType = 'autosnippet' }, { t '\\mathbb{U}' }, { condition = in_mathzone }),
 
   -- Calligraphied letters
   s({ trig = 'cA', snippetType = 'autosnippet' }, { t '\\mathcal{A}' }, { condition = in_mathzone }),
@@ -101,4 +96,29 @@ return {
   s({ trig = 'cX', snippetType = 'autosnippet' }, { t '\\mathcal{X}' }, { condition = in_mathzone }),
   s({ trig = 'cY', snippetType = 'autosnippet' }, { t '\\mathcal{Y}' }, { condition = in_mathzone }),
   s({ trig = 'cZ', snippetType = 'autosnippet' }, { t '\\mathcal{Z}' }, { condition = in_mathzone }),
+
+  -- Random bullshit
+  s({ trig = '@<', snippetType = 'autosnippet' }, { t '\\leq' }, { condition = in_mathzone }),
+  s({ trig = '@>', snippetType = 'autosnippet' }, { t '\\geq' }, { condition = in_mathzone }),
+  s({ trig = '!=', snippetType = 'autosnippet' }, { t '\\neq' }, { condition = in_mathzone }),
+  s({ trig = '~', snippetType = 'autosnippet' }, { t '\\backsim' }, { condition = in_mathzone }),
+  s({ trig = '=~', snippetType = 'autosnippet' }, { t '\\backsimeq' }, { condition = in_mathzone }),
+  s({ trig = 'env', snippetType = 'autosnippet' }, { t '\\approx' }, { condition = in_mathzone }),
+
+  s({ trig = '=>', snippetType = 'autosnippet' }, { t '\\Rightarrow' }, { condition = in_mathzone }),
+  s({ trig = '<=', snippetType = 'autosnippet' }, { t '\\Leftarrow' }, { condition = in_mathzone }),
+  s({ trig = 'eq', snippetType = 'autosnippet' }, { t '\\Leftrightarrow' }, { condition = in_mathzone }),
+  s({ trig = '^', snippetType = 'autosnippet' }, { t '\\wedge' }, { condition = in_mathzone }),
+  s({ trig = 'not', snippetType = 'autosnippet' }, { t '\\lnot' }, { condition = in_mathzone }),
+  s({ trig = 'or', snippetType = 'autosnippet' }, { t '\\lor' }, { condition = in_mathzone }),
+  s({ trig = 'vide', snippetType = 'autosnippet' }, { t '\\emptyset' }, { condition = in_mathzone }),
+
+  s({ trig = 'in', snippetType = 'autosnippet' }, { t '\\in' }, { condition = in_mathzone }),
+  s({ trig = '!in', snippetType = 'autosnippet' }, { t '\\notin' }, { condition = in_mathzone }),
+  s({ trig = 'sub', snippetType = 'autosnippet' }, { t '\\subset' }, { condition = in_mathzone }),
+  s({ trig = 'sup', snippetType = 'autosnippet' }, { t '\\supset' }, { condition = in_mathzone }),
+  s({ trig = 'fo', snippetType = 'autosnippet' }, { t '\\forall' }, { condition = in_mathzone }),
+  s({ trig = 'ex', snippetType = 'autosnippet' }, { t '\\exists' }, { condition = in_mathzone }),
+  s({ trig = '!ex', snippetType = 'autosnippet' }, { t '\\nexists' }, { condition = in_mathzone }),
+  s({ trig = '...', snippetType = 'autosnippet' }, { t '\\dots' }, { condition = in_mathzone }),
 }
