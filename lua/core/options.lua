@@ -39,3 +39,5 @@ vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better compl
 vim.opt.shortmess:append 'c' -- Don't give |ins-completion-menu| messages (default: does not include 'c')
 vim.g.tex_flavor = 'latex'
 vim.opt.iskeyword:append '-' -- Hyphenated words recognized by searches (default: does not include '-')
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
