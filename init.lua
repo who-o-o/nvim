@@ -38,4 +38,5 @@ require('lazy').setup {
   require 'plugins.vimtex',
   require 'plugins.pear-tree',
   require 'plugins.toggleterm',
+  require 'plugins.trouble',
 }

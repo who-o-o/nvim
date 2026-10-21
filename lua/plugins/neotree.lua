@@ -10,7 +10,7 @@ return {
       's1n7ax/nvim-window-picker',
       version = '2.*',
       config = function()
-        require('window-picker').setup{
+        require('window-picker').setup {
           filter_rules = {
             include_current_win = false,
             autoselect_one = true,
@@ -181,6 +181,7 @@ return {
       },
       nesting_rules = {},
       filesystem = {
+        hijack_netrw_behavior = 'open_current',
         filtered_items = {
           visible = false, -- when true, they will just be displayed differently than normal items
           hide_dotfiles = false,
