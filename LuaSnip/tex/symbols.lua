@@ -105,6 +105,7 @@ return {
   s({ trig = '=~', snippetType = 'autosnippet' }, { t '\\backsimeq' }, { condition = in_mathzone }),
   s({ trig = 'env', snippetType = 'autosnippet' }, { t '\\approx' }, { condition = in_mathzone }),
 
+  s({ trig = ';8', snippetType = 'autosnippet' }, { t '\\infty' }, { condition = in_mathzone }),
   s({ trig = '=>', snippetType = 'autosnippet' }, { t '\\Rightarrow' }, { condition = in_mathzone }),
   s({ trig = '<=', snippetType = 'autosnippet' }, { t '\\Leftarrow' }, { condition = in_mathzone }),
   s({ trig = 'eq', snippetType = 'autosnippet' }, { t '\\Leftrightarrow' }, { condition = in_mathzone }),
