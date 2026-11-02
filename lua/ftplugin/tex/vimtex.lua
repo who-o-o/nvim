@@ -8,4 +8,5 @@ return {
     vim.g.vimtex_view_automatic = 0
   end,
   vim.keymap.set('n', '<C-A-b>', ':VimtexCompile', opts),
+  vim.keymap.set('n', '<C-A-v>', ':VimtexView', opts),
 }

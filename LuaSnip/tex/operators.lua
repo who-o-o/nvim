@@ -8,7 +8,7 @@ local in_mathzone = function()
 end
 
 return {
-  s({ trig = 'ff', snippetType = 'autosnippet', condition = in_mathzone }, fmta('\\frac{<>}{<>}', { i(1), i(2) })),
+  s({ trig = 'ff', snippetType = 'autosnippet', condition = in_mathzone }, fmta('\\frac{<>}{<>}<>', { i(1), i(2), i(3) })),
   s({ trig = '@2', snippetType = 'autosnippet', condition = in_mathzone }, fmta('\\sqrt{<>}', { i(1) })),
   s({ trig = '@n2', snippetType = 'autosnippet', condition = in_mathzone }, fmta('\\sqrt[<>]{<>}', { i(1), i(2) })),
   s({ trig = 'bin', snippetType = 'autosnippet', condition = in_mathzone }, fmta('\\binom{<>}{<>}', { i(1), i(2) })),

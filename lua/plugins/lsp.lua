@@ -157,6 +157,7 @@ return {
       terraformls = {},
       jsonls = {},
       yamlls = {},
+      qmlls = { filetypes = { 'qml', 'qmljs' } },
       clangd = {},
       texlab = {},
       lua_ls = {
