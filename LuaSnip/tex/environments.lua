@@ -78,12 +78,7 @@ return {
     )
   ),
 
-  -- plain pairs
-  s({ trig = '(', snippetType = 'autosnippet' }, fmta('(<>)<>', { i(1), i(0) })),
-  s({ trig = '[', snippetType = 'autosnippet' }, fmta('[<>]<>', { i(1), i(0) })),
-  s({ trig = '{', snippetType = 'autosnippet' }, fmta('{<>}<>', { i(1), i(0) })),
-
   -- backslash versions win over the plain ones
-  s({ trig = '\\(', snippetType = 'autosnippet', priority = 2000 }, fmta('\\(<>\\)<>', { i(1), i(0) })),
-  s({ trig = '{', snippetType = 'autosnippet', priority = 2000, condition = in_mathzone }, fmta('\\{<>\\}<>', { i(1), i(0) })),
+  s({ trig = '@M', snippetType = 'autosnippet', priority = 2000 }, fmta('\\(<>\\)<>', { i(1), i(0) })),
+  s({ trig = '\\{', snippetType = 'autosnippet', priority = 2000, condition = in_mathzone }, fmta('\\{<>\\}<>', { i(1), i(0) })),
 }
