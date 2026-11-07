@@ -116,7 +116,7 @@ return {
   s({ trig = 'or', snippetType = 'autosnippet' }, { t '\\lor' }, { condition = in_mathzone }),
   s({ trig = 'vide', snippetType = 'autosnippet' }, { t '\\emptyset' }, { condition = in_mathzone }),
 
-  s({ trig = 'in', snippetType = 'autosnippet' }, { t '\\in' }, { condition = in_mathzone }),
+  s({ trig = 'ap', snippetType = 'autosnippet' }, { t '\\in' }, { condition = in_mathzone }),
   s({ trig = '!in', snippetType = 'autosnippet' }, { t '\\notin' }, { condition = in_mathzone }),
   s({ trig = 'sub', snippetType = 'autosnippet' }, { t '\\subset' }, { condition = in_mathzone }),
   s({ trig = 'sup', snippetType = 'autosnippet' }, { t '\\supset' }, { condition = in_mathzone }),

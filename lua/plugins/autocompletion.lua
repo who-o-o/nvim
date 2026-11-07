@@ -111,7 +111,13 @@ return { -- Autocompletion
         },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'buffer' },
+        {
+          name = 'buffer',
+          option = {
+            -- a word must start with a letter/underscore/non-ASCII char, so pure numbers are ignored
+            keyword_pattern = [[\%(\h\|[^\x00-\x7F]\)\k*]],
+          },
+        },
         { name = 'path' },
       },
 
