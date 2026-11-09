@@ -14,7 +14,7 @@ return {
     filetype = {
       c = 'cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt',
       cpp = 'cd $dir && g++ $fileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt',
-      python = 'python3 -u',
+      python = 'python3 $fileName',
       ocaml = 'utop',
     },
   },
