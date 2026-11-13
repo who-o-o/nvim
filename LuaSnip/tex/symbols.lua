@@ -124,4 +124,5 @@ return {
   s({ trig = 'ex', snippetType = 'autosnippet' }, { t '\\exists' }, { condition = in_mathzone }),
   s({ trig = '!ex', snippetType = 'autosnippet' }, { t '\\nexists' }, { condition = in_mathzone }),
   s({ trig = '...', snippetType = 'autosnippet' }, { t '\\dots' }, { condition = in_mathzone }),
+  s({ trig = '@8', snippetType = 'autosnippet' }, { t '\\infty' }, { condition = in_mathzone }),
 }

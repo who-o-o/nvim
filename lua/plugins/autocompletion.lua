@@ -5,7 +5,6 @@ return { -- Autocompletion
       'L3MON4D3/LuaSnip',
       dependencies = {
         {
-          'rafamadriz/friendly-snippets',
           config = function()
             -- si j'ai mes propres snippets on les skip
             require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'tex' } }
@@ -110,7 +109,13 @@ return { -- Autocompletion
           group_index = 0,
         },
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        {
+          name = 'luasnip',
+          entry_filter = function(entry)
+            local word = entry:get_word()
+            return not (word:match '^time' or word:match '^date')
+          end,
+        },
         {
           name = 'buffer',
           keyword_length = 2,
