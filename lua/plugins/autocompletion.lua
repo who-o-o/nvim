@@ -5,9 +5,10 @@ return { -- Autocompletion
       'L3MON4D3/LuaSnip',
       dependencies = {
         {
+          'rafamadriz/friendly-snippets',
           config = function()
             -- si j'ai mes propres snippets on les skip
-            require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'tex' } }
+            require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'tex', 'friendly-snippets' } }
           end,
         },
       },
