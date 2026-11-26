@@ -148,6 +148,7 @@ return {
           },
         },
       },
+      marksman = {},
       ocamllsp = {},
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       cssls = {},

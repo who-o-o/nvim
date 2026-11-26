@@ -8,7 +8,7 @@ return { -- Autocompletion
           'rafamadriz/friendly-snippets',
           config = function()
             -- si j'ai mes propres snippets on les skip
-            require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'tex', 'friendly-snippets' } }
+            require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'latex', 'tex' } }
           end,
         },
       },
